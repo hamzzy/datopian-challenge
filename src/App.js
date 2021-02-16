@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import * as d3 from 'd3'
+import csvData from './daily-price.csv'
+import LineChart from './components/Linechart.js'
+import Header from './components/Header';
+import {Container,Row,Jumbotron} from 'react-bootstrap';
 
-function App() {
+
+const parseNumber = d => {
+  return { date : d3.timeParse("%Y-%m-%d")(d.date), value : +d.price }
+}
+
+const App = () => {
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    d3.csv(csvData, parseNumber).then(setData)
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+
+      <Container>
+        <div>
+           <h1>Henry Hub Natural Gas  Daily Prices</h1>
+        </div>
+      </Container>
+
+      <Container >
+  <Row>     
+     <Jumbotron>        
+    <LineChart data={data} />
+        </Jumbotron>
+        </Row>
+</Container>
     </div>
   );
 }

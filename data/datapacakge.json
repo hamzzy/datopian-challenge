@@ -1,0 +1,29 @@
+{
+    "profile": "tabular-data-package",
+    "resources": [
+      {
+        "name": "resource1",
+        "path": "daily-price.csv",
+        "profile": "tabular-data-resource",
+        "schema": {
+          "fields": [
+            {
+              "name": "date",
+              "type": "integer",
+              "format": "default"
+            },
+            {
+              "name": "price",
+              "type": "integer",
+              "format": "default"
+            }
+          ]
+        }
+      }
+    ],
+
+    "name": "daily-prices",
+        "description": "Henry Hub Natural Gas  Daily Prices",
+    "title": "Henry Hub Natural Gas Daily Prices"
+    
+  }
