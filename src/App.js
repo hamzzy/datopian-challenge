@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import * as d3 from 'd3'
-import csvData from './daily-price.csv'
+
+const csvData=require('../data/daily-price.csv')
+// import csvData from '../data/daily-price.csv'
 import LineChart from './components/Linechart.js'
 import Header from './components/Header';
 import {Container,Row,Jumbotron} from 'react-bootstrap';

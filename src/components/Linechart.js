@@ -14,6 +14,7 @@ const LineChart = props => {
     .attr("height", height + margin["top"] + margin["bottom"])
     .append("g")
     .attr("transform", `translate(${margin["left"]},  ${margin["top"]})`);
+    
 
   // Add X axis --> it is a date format
   var x = d3
