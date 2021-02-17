@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import * as d3 from 'd3'
 
-import Data from 'csv-data/daily-price.csv';
+import Data from '../data/daily-price.csv'
 import LineChart from './components/Linechart.js'
 import Header from './components/Header';
 import {Container,Row,Jumbotron,Col} from 'react-bootstrap';
